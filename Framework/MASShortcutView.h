@@ -9,6 +9,7 @@ typedef enum {
     MASShortcutViewStyleFlat
 } MASShortcutViewStyle;
 
+IB_DESIGNABLE
 @interface MASShortcutView : NSView
 
 @property (nonatomic, strong) MASShortcut *shortcutValue;
@@ -16,7 +17,7 @@ typedef enum {
 @property (nonatomic, getter = isRecording) BOOL recording;
 @property (nonatomic, getter = isEnabled) BOOL enabled;
 @property (nonatomic, copy) void (^shortcutValueChange)(MASShortcutView *sender);
-@property (nonatomic, assign) MASShortcutViewStyle style;
+@property (nonatomic, assign) IBInspectable MASShortcutViewStyle style;
 
 /// Returns custom class for drawing control.
 + (Class)shortcutCellClass;
